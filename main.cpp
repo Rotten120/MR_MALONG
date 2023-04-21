@@ -2,6 +2,8 @@
 #include <fraction.h>
 #include <cmath>
 
+//insert text
+
 class points {
     double a;
     double b;
