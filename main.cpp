@@ -2,7 +2,8 @@
 #include <fraction.h>
 #include <cmath>
 
-//insert text
+//THIS IS FOR LINEAR CLASSIFICATION ONLY
+//THIS IS A PROTOTYPE, NOT THE FINAL ALGORITHM
 
 class points {
     double a;
