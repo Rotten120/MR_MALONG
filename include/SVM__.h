@@ -85,8 +85,8 @@ hyperPlane trainSVM(std::vector <points> Base, std::vector <points> Ref) {
     int refSize = Ref.size();
     int arraySize = baseSize * refSize;
 
-    hyperPlane bestPlane = getSVM(Base[0], Ref[0]);
-    double bestAcc = testSVM(Base, Ref, bestPlane);
+    double lowestDistance = Base[0].getDistance(Ref[0]);
+    points nearestBase = Base[0], nearestRef = Ref[0];
 
     int indexBase = 0, indexRef = 0;
 
@@ -94,16 +94,31 @@ hyperPlane trainSVM(std::vector <points> Base, std::vector <points> Ref) {
         indexBase = (i - (i % refSize)) / refSize;
         indexRef = i % refSize;
 
-        hyperPlane Plane = getSVM(Base[indexBase], Ref[indexRef]);
-        double Acc = testSVM(Base, Ref, Plane);
+        double pointDistance = Base[indexBase].getDistance(Ref[indexRef]);
 
-        if(bestAcc < Acc) {
-            bestPlane = Plane;
-            bestAcc = Acc;
-        }    
+        if(lowestDistance > pointDistance) {
+            lowestDistance = pointDistance;
+            nearestBase = Base[indexBase];
+            nearestRef = Ref[indexRef];
+        }   
     }
+
+    std::cout << "[";
+        nearestBase.print(0);
+    std::cout << ", ";
+        nearestBase.print(1);
+    std::cout << ", ";
+        nearestBase.print(2);
+    std::cout << "] || [";
+        nearestRef.print(0);
+    std::cout << ", ";
+        nearestRef.print(1);
+    std::cout << ", ";
+        nearestRef.print(2);
+    std::cout << "]\n";
     
-    return bestPlane;
+    hyperPlane Plane = getSVM(nearestBase, nearestRef);
+    return Plane;
 }
 
 hyperPlane::hyperPlane() {
