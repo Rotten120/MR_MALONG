@@ -1,0 +1,13 @@
+A 5-MINUTE VIDEO OF SELLING PRESENTATION including:
+ - research title
+ - research problem
+ - background of the research
+ - why the research is necessary
+ - the utility of the research (novelty)
+ - flawless methodology
+
+humidity
+temperature
+pH
+soil Moisture** (inde ko rin sure kung kasama pa to dahil walang data sa mga datasets regarding this one)
+sunlight** (baka limited ito to user input kasi sunlight intensity lang ang kayang idetect ng detectors smth)

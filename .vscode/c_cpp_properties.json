@@ -7,7 +7,7 @@
             "compilerArgs": [],
             "intelliSenseMode": "${default}",
             "includePath": [
-                "${workspaceFolder}\\include\\**"
+                "${workspaceFolder}\\include"
             ],
             "forcedInclude": [],
             "cStandard": "c11",
